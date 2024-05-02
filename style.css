@@ -69,12 +69,31 @@ div {
     font-size: 2.5vh;
 }
 
+@media (max-width: 1499px) {
+
+    .grid {
+
+        width: 50%;
+        height: 80%;
+        
+        button {
+            max-width: 12vh;
+            max-height: 12vh;
+
+            font-size: 3vh;
+        }
+    }
+    .btn {
+        font-size: 2vh;
+    }
+}
+
 @media (max-width: 1199px) {
 
     .grid {
 
         width: 50%;
-        height: 100%;
+        height: 80%;
         
         button {
             max-width: 12vh;
@@ -92,8 +111,8 @@ div {
 
     .grid {
 
-        width: 100%;
-        height: 100%;
+        width: 80%;
+        height: 80%;
         
         button {
             max-width: 14vh;
@@ -112,7 +131,7 @@ div {
     .grid {
 
         width: 100%;
-        height: 100%;
+        height: 80%;
         
         button {
             max-width: 12vh;
@@ -131,7 +150,7 @@ div {
     .grid {
 
         width: 100%;
-        height: 100%;
+        height: 80%;
         
         button {
             max-width: 12vh;
