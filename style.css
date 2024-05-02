@@ -66,6 +66,44 @@ div {
     height: 6vh;
 }
 
+@media (max-width: 1500px) {
+
+    .grid {
+
+        width: 40%;
+        height: 100%;
+        
+        button {
+            max-width: 12vh;
+            max-height: 12vh;
+
+            font-size: 3vh;
+        }
+    }
+    .btn {
+        font-size: 2vh;
+    }
+}
+
+@media (max-width: 1200px) {
+
+    .grid {
+
+        width: 50%;
+        height: 100%;
+        
+        button {
+            max-width: 12vh;
+            max-height: 12vh;
+
+            font-size: 3vh;
+        }
+    }
+    .btn {
+        font-size: 2vh;
+    }
+}
+
 @media (max-width: 1000px) {
 
     .grid {
@@ -114,25 +152,6 @@ div {
         button {
             max-width: 8vh;
             max-height: 8vh;
-
-            font-size: 3vh;
-        }
-    }
-    .btn {
-        font-size: 2vh;
-    }
-}
-
-@media (max-width: 350px) {
-
-    .grid {
-
-        width: 90%;
-        height: 100%;
-        
-        button {
-            max-width: 6vh;
-            max-height: 6vh;
 
             font-size: 3vh;
         }
