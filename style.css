@@ -1,0 +1,66 @@
+:root {
+    --ButtonBG: #a3a3a3;
+    --ButtonHoverBG: #686868;
+}
+
+header {
+    margin-top: 3vh;
+
+    font-family: 'Courier New';
+}
+
+body {
+    background-image: radial-gradient(rgb(255, 255, 255), rgb(114, 114, 114));
+}
+
+footer {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+}
+
+div {
+    /*border: 1px solid red;*/
+}
+
+.grid {
+    width: 30%;
+    height: 30%;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5vh;
+
+    border: 2px solid black;
+
+    .row {
+        margin-left: .5vh;
+        margin-right: .5vh;
+        margin-top: 2vh;
+        margin-bottom: 2vh;
+    }
+
+    button {
+        width: 12vh;
+        height: 12vh;
+
+        color: black;
+
+        background-color: var(--ButtonBG);
+    }
+    button:hover {
+        color: white;
+        border: 2px solid black;
+        background-color: var(--ButtonHoverBG);
+    }
+    
+    .disabled {
+        background-color: var(--ButtonBG);
+        opacity: 1;
+    }
+}
+
+.btn {
+    width: 12vh;
+    height: 6vh;
+}
