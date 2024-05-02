@@ -5,6 +5,7 @@
 
 header {
     margin-top: 3vh;
+    font-size: 4vh;
 
     font-family: 'Courier New';
 }
@@ -63,4 +64,99 @@ div {
 .btn {
     width: 12vh;
     height: 6vh;
+}
+
+@media (max-width: 1000px) {
+
+    .grid {
+
+        width: 50%;
+        height: 100%;
+        
+        button {
+            max-width: 9vh;
+            max-height: 9vh;
+
+            font-size: 3vh;
+        }
+    }
+    .btn {
+        font-size: 2vh;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .grid {
+
+        width: 60%;
+        height: 100%;
+        
+        button {
+            max-width: 8vh;
+            max-height: 8vh;
+
+            font-size: 3vh;
+        }
+    }
+    .btn {
+        font-size: 2vh;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .grid {
+
+        width: 90%;
+        height: 100%;
+        
+        button {
+            max-width: 8vh;
+            max-height: 8vh;
+
+            font-size: 3vh;
+        }
+    }
+    .btn {
+        font-size: 2vh;
+    }
+}
+
+@media (max-width: 350px) {
+
+    .grid {
+
+        width: 90%;
+        height: 100%;
+        
+        button {
+            max-width: 6vh;
+            max-height: 6vh;
+
+            font-size: 3vh;
+        }
+    }
+    .btn {
+        font-size: 2vh;
+    }
+}
+
+@media (max-width: 300px) {
+
+    .grid {
+
+        width: 90%;
+        height: 100%;
+        
+        button {
+            max-width: 5vh;
+            max-height: 5vh;
+
+            font-size: 2vh;
+        }
+    }
+    .btn {
+        font-size: 2vh;
+    }
 }
