@@ -5,6 +5,8 @@ var puzzle = [
     [13, 14, 15, 0]
 ];
 var winModel = puzzle;
+var counter = 0;
+
 
 drawGrid();
 start();
@@ -38,6 +40,9 @@ function clearGrid() {
 }
 
 function actionButton(value) {
+    counter++;
+    document.getElementById("moves").innerText = counter;
+
     let row = getRow(value);
     let col = getCol(value);
 
@@ -172,6 +177,8 @@ function checkWin() {
         
         button12.classList = ("btn disabled");
         button15.classList = ("btn disabled");
+
+        stopTimer();
     }
 
     function isWin() {
