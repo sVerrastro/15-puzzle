@@ -43,11 +43,6 @@ function actionButton(value) {
     counter++;
     document.getElementById("moves").innerText = counter;
 
-    let row = getRow(value);
-    let col = getCol(value);
-
-    console.log("DEBUG>> riga: " + row + " - colonna: " + col);
-
     if (check(value, 'top')) invert(value, 'top');
     else if (check(value, 'bottom')) invert(value, 'bottom');
     else if (check(value, 'left')) invert(value, 'left');
@@ -67,28 +62,24 @@ function invert(value, direction) {
             puzzle[row][col] = 0;
             puzzle[row - 1][col] = temp;
 
-            console.log("DEBUG>> spostato in alto");
             break;
         }
         case 'bottom': {
             puzzle[row][col] = 0;
             puzzle[row + 1][col] = temp;
 
-            console.log("DEBUG>> spostato in basso");
             break;
         }
         case 'left': {
             puzzle[row][col] = 0;
             puzzle[row][col - 1] = temp;
 
-            console.log("DEBUG>> spostato a sinistra");
             break;
         }
         case 'right': {
             puzzle[row][col] = 0;
             puzzle[row][col + 1] = temp;
 
-            console.log("DEBUG>> spostato a destra");
             break;
         }
     }
@@ -127,9 +118,7 @@ function getCol(value) {
 }
 
 function start() {
-    document.getElementById("timer").innerText = "0:00";
-    let mosse = document.getElementById("moves").innerText = "0";
-
+    
     Array.prototype.contains = function(value) {
         for (let r = 0; r < this.length; r++) {
             for (let c = 0; c < this.length; c++) {
@@ -139,6 +128,10 @@ function start() {
     
         return false;
     }
+
+    counter = 0;
+    document.getElementById("timer").innerText = "0:00";
+    document.getElementById("moves").innerText = "0";
 
     let root = document.querySelector(':root');
 
@@ -152,19 +145,21 @@ function start() {
         for (let c = 0; c < 4; c++) {
             rand = Math.floor(Math.random() * 16);
 
-            console.log("DEBUG>>Numero Generato: " + rand);
-
             if (!numbers.contains(rand)) numbers[r][c] = rand;
             else c--;
         }
     }
 
-    console.log("DEBUG>>array numeri casuali");
-    console.table(numbers);
-
     puzzle = numbers;
 
     drawGrid();
+    /** AVVISO
+    * per qualche motivo sconosciuto, la combo stop + start da problemi alla generazione dei numeri
+    * (metterne uno prima e uno dopo non causa problemi)
+    * quindi sono messi alla fine in modo da non causare danni
+    **/
+    stopTimer();
+    startTimer();
 }
 
 function checkWin() {
