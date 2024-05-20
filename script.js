@@ -127,6 +127,8 @@ function getCol(value) {
 }
 
 function start() {
+    document.getElementById("timer").innerText = "0:00";
+    let mosse = document.getElementById("moves").innerText = "0";
 
     Array.prototype.contains = function(value) {
         for (let r = 0; r < this.length; r++) {
