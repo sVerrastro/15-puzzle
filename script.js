@@ -6,6 +6,8 @@ var puzzle = [
 ];
 var winModel = puzzle;
 var counter = 0;
+var timerInterval;
+var startTime;
 
 
 drawGrid();
@@ -41,6 +43,8 @@ function clearGrid() {
 
 function actionButton(value) {
     counter++;
+    if (counter == 1) startTimer();
+
     document.getElementById("moves").innerText = counter;
 
     if (check(value, 'top')) invert(value, 'top');
@@ -135,8 +139,8 @@ function start() {
 
     let root = document.querySelector(':root');
 
-    root.style.setProperty('--ButtonBG', '#a3a3a3');
-    root.style.setProperty('--ButtonHoverBG', '#686868');
+    root.style.setProperty('--ButtonBG', '#9e2a2b');
+    root.style.setProperty('--ButtonHoverBG', '#540b0e');
 
     let numbers = [ [],[],[],[] ];
     let rand;
@@ -159,7 +163,6 @@ function start() {
     * quindi sono messi alla fine in modo da non causare danni
     **/
     stopTimer();
-    startTimer();
 }
 
 function checkWin() {
@@ -189,4 +192,22 @@ function checkWin() {
 
         return true;
     }
+}
+
+function startTimer() {
+    startTime = new Date().getTime();
+    timerInterval = setInterval(updateTimer, 1000);
+}
+    
+function stopTimer() {
+    clearInterval(timerInterval);
+}
+    
+function updateTimer() {
+    var now = new Date().getTime();
+    var elapsedTime = now - startTime;
+    var minutes = Math.floor(elapsedTime / (1000 * 60));
+    var seconds = Math.floor((elapsedTime % (1000 * 60)) / 1000);
+    seconds = (seconds < 10 ? "0" : "") + seconds;
+    document.getElementById("timer").innerText = minutes + ":" + seconds;
 }

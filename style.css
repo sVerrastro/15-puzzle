@@ -1,19 +1,21 @@
 :root {
-    --ButtonBG: #a3a3a3;
-    --ButtonHoverBG: #686868;
+    --ButtonBG: #9e2a2b;
+    --ButtonHoverBG: #540b0e;
 }
 
 header {
-    background-color: rgba(0, 0, 0, .3);
+    background-color:  #e09f3e;
     height: 8vh;
     align-content: center;
     font-size: 4vh;
+    color: #9e2a2b;
+    border: 2px solid #540b0e;
 
     font-family: 'Courier New';
 }
 
 body {
-    background-image: radial-gradient(rgb(255, 255, 255), rgb(114, 114, 114));
+    background-image: radial-gradient(#fff3b0, #e09f3e);
     overflow: hidden;
 }
 
@@ -29,12 +31,20 @@ div {
 
 #timer {
     background-color: var(--ButtonBG);
+    border: 1px solid var(--ButtonHoverBG);
     color: white;
 }
 
 #moves {
     background-color: var(--ButtonBG);
+    border: 1px solid var(--ButtonHoverBG);
     color: white;
+}
+
+#start {
+    background: #e09f3e;
+    border: 2px solid #540b0e;
+    color: #9e2a2b;
 }
 
 .grid {
@@ -45,7 +55,8 @@ div {
     margin-right: auto;
     margin-top: 5vh;
 
-    border: 2px solid black;
+    border: 2px solid #540b0e;
+    border-radius: 5%;
 
     .row {
         margin-left: .5vh;
