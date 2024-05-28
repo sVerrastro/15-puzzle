@@ -61,10 +61,14 @@ function invert(value, direction) {
     let col = getCol(value);
     let temp = value;
 
+    let bottone = document.getElementById(value);
+
     switch (direction) {
         case 'top': {
             puzzle[row][col] = 0;
             puzzle[row - 1][col] = temp;
+
+            //bottone.style.transform = "translateY(-14vh);";
 
             break;
         }
@@ -72,17 +76,23 @@ function invert(value, direction) {
             puzzle[row][col] = 0;
             puzzle[row + 1][col] = temp;
 
+            //bottone.style.transform = "translateY(14vh);";
+
             break;
         }
         case 'left': {
             puzzle[row][col] = 0;
             puzzle[row][col - 1] = temp;
 
+            //bottone.style.transform = "translateX(-14vh);";
+
             break;
         }
         case 'right': {
             puzzle[row][col] = 0;
             puzzle[row][col + 1] = temp;
+
+            //bottone.style.transform = "translateX(14vh);";
 
             break;
         }
@@ -100,9 +110,7 @@ function check(value, direction) {
             case 'left': return (puzzle[row][col-1] == 0) ? true : false; break;
             case 'right': return (puzzle[row][col+1] == 0) ? true : false; break;
         }
-    } catch {
-        console.log('DEBUG>> errore');
-    }
+    } catch {}
     
 }
 
@@ -134,6 +142,8 @@ function start() {
     }
 
     counter = 0;
+
+    stopTimer();
     document.getElementById("timer").innerText = "0:00";
     document.getElementById("moves").innerText = "0";
 
@@ -157,12 +167,6 @@ function start() {
     puzzle = numbers;
 
     drawGrid();
-    /** AVVISO
-    * per qualche motivo sconosciuto, la combo stop + start da problemi alla generazione dei numeri
-    * (metterne uno prima e uno dopo non causa problemi)
-    * quindi sono messi alla fine in modo da non causare danni
-    **/
-    stopTimer();
 }
 
 function checkWin() {
